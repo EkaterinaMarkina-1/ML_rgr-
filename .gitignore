@@ -1,13 +1,36 @@
-/.idea
-/.ipynb_checkpoints
-/Lab_10.ipynb
-/Lab_4.ipynb
-/Lab_5.ipynb
-/Lab_6.ipynb
-/Lab_7.ipynb
-/Lab_9.ipynb
-/requirements.txt
-/spam.csv
-/Untitled.ipynb
-/venv
-/weatherAUS.csv
+# Prerequisites
+*.d
+venv
+VenvActivation.txt
+example
+part100.csv
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
