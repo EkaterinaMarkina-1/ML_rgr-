@@ -7,7 +7,7 @@ import streamlit as st
 
 
 
-df= pd.read_csv('data/Data4.csv')
+df= pd.read_csv('mumbai_houses_task.csv')
 
 if df is not None:
     st.header("Датасет")
