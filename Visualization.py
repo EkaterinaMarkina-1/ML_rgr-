@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-data= pd.read_csv("data/Data4.csv")
+data= pd.read_csv("mumbai_houses_task.csv")
 st.title('Визуализация датасета')
 
 st.header('Датасет для классификации - "Опасен ли астероид"')

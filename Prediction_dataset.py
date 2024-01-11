@@ -31,7 +31,7 @@ if df is not None:
     if button_clicked:
         if model_type is not None:
             if model_type == "Knn":
-                with open('models/knn.pkl', 'rb') as file:
+                with open('knn.pkl', 'rb') as file:
                     knn_model = pickle.load(file)
                 if knn_model.predict(list) == 0:
                     st.success("Астероид не опасен")
