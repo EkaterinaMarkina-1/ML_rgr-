@@ -25,7 +25,6 @@ def get_prepared(df):
 
     return data
 
-
 if file:
     df = pd.read_csv(file)
     st.write(df)

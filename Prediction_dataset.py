@@ -54,7 +54,7 @@ st.write(new_df)
 predictions = []
 btn = st.button("Рассчитать")
 if btn:
-    with open(r"1_multi_dimensional_regression.pickle", "rb") as f:
+    with open(r"1_multi_dimensional_regression.pickle", "wb") as f:
         reg = pickle.load(f)
         pred = reg.predict(df_reg)[0]
         predictions.append(pred)
