@@ -1,32 +1,29 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
+import seaborn as sns
 
-data= pd.read_csv("mumbai_houses_task.csv")
+df= pd.read_csv("mumbai_houses_task.csv")
 st.title('Визуализация датасета')
 
-st.header('Датасет для классификации - "Опасен ли астероид"')
+st.header("Тепловая карта корреляций числовых признаков")
+fig = plt.figure()
+fig.add_subplot(sns.heatmap(df[['price', 'area', 'latitude', 'longitude', 'bedrooms', 'bathrooms', 'balconyv']].corr(), annot=True))
+st.pyplot(fig)
 
-st.markdown('---')
+st.header("График BoxPlot цены дома")
+fig = plt.figure()
+plt.boxplot(df["price"])
+st.pyplot(plt)
 
-st.write("Диаграмма с областями для скорости и расстояния")
+st.header("Гистограмма распределения площади домов")
+fig = plt.figure()
+fig.add_subplot(sns.histplot(df["area"]))
+st.pyplot(fig)
 
-chart_data = pd.DataFrame(np.random.randn(20, 2), columns=["relative_velocity", "miss_distance"])
-st.area_chart(chart_data)
-
-st.write("Диаграмма с областями для параметров скорости min и max")
-
-chart_data = pd.DataFrame(np.random.randn(20, 2), columns=["est_diameter_max", "est_diameter_min"])
-st.area_chart(chart_data)
-
-st.write("Диаграмма рассеяния для скорости, расстояния и светимости")
-
-chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["relative_velocity", "miss_distance", "absolute_magnitude"])
-st.scatter_chart(chart_data)
-st.write("Гистограмма предсказываемого признака")
-
-fig, ax = plt.subplots()
-ax.hist(data['hazardous'], bins=20)
-
+st.header("Круговая диаграмма для типа здания")
+fig = plt.figure()
+size = df.groupby("type_of_building").size()
+sns.set_palette("area")
+plt.pie(size.values, labels=size.index, counterclock=True, autopct='%1.0f%%')
 st.pyplot(fig)
